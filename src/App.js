@@ -7,6 +7,8 @@ import 'prismjs/components/prism-jsx.min';
 import GitHubButton from 'react-github-btn';
 import TypeMe, { LineBreak, Delete, Delay } from 'react-typeme';
 
+import { FaTwitter, FaGithub, FaLinkedin } from 'react-icons/fa';
+
 import './prism.css';
 import './App.css';
 
@@ -32,7 +34,7 @@ const App = () => {
               <a href="#features">Features</a>
             </li>
             <li>
-              <a href="#examples">Examples</a>
+              <a href="#examples">Usage Examples</a>
             </li>
             <li>
               <a href="#installation">Installation</a>
@@ -57,8 +59,9 @@ const App = () => {
           <h1>React-TypeMe</h1>
           <p>
             React-TypeMe is a typewriter animation simulator component built to
-            be simple and powerful. It was created primarily to learn about
-            React Hooks. It is built as a pure React functional component.
+            be simple and powerful. It was created primarily to learn more about
+            React Hooks feature. It is built as a pure React functional
+            component.
           </p>
         </section>
 
@@ -115,7 +118,7 @@ const App = () => {
         </section>
 
         <section id="examples" className="section">
-          <h2 id="examples">Examples</h2>
+          <h2 id="examples">Usage Examples</h2>
           <div className="section-example">
             <h4>A simple string</h4>
             <TypeMe
@@ -234,6 +237,51 @@ const App = () => {
         <section id="installation" className="section">
           <h2>Installation</h2>
         </section>
+
+        <section id="license" className="section">
+          <h2>License</h2>
+          <p>
+            Use <strong>React-TypeMe</strong> in personal or open source
+            projects 100% free of charge. To use it in commercial projects,
+            thank you for purchasing a single or multi-project license right
+            here.
+          </p>
+          <div className="license-cta">
+            <p className="license-col">
+              <span className="license-price">USD 15</span>
+              <span>Commercial Single License</span>
+              <span className="license-desc">
+                Use React-TypeMe in a single commercial project. Includes
+                lifetime updates.
+              </span>
+              <span className="license-button">Buy Single License</span>
+            </p>
+            <p className="license-col">
+              <span className="license-price">USD 45</span>
+              <span>Commercial Unlimited License</span>
+              <span className="license-desc">
+                Use React-TypeMe in unlimited commercial projects. Includes
+                lifetime updates.
+              </span>
+              <span className="license-button">Buy Unlimited License</span>
+            </p>
+          </div>
+        </section>
+
+        <footer className="foot">
+          <div>
+            <span className="social">
+              <FaTwitter />
+            </span>
+            <span className="social">
+              <FaGithub />
+            </span>
+            <span className="social">
+              <FaLinkedin />
+            </span>
+          </div>
+          <span className="footer-text">Created by Oliver Oxenham</span>
+        </footer>
       </div>
     </React.Fragment>
   );
