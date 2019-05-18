@@ -4,7 +4,8 @@ import { TypographyStyle, GoogleFont } from 'react-typography';
 import fairyGatesTheme from 'typography-theme-fairy-gates';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx.min';
-import TypeMe, { LineBreak, Delete } from 'react-typeme';
+import GitHubButton from 'react-github-btn';
+import TypeMe, { LineBreak, Delete, Delay } from 'react-typeme';
 
 import './prism.css';
 import './App.css';
@@ -20,129 +21,172 @@ const App = () => {
       <GoogleFont typography={typography} />
       <TypographyStyle typography={typography} />
       <div className="App">
-        <header className="App-header">...menu...</header>
-        <h1>React-TypeMe</h1>
-        <p>
-          TypeMe is a typewriting simulator React component built to be simple
-          and powerful. It was created primarily to learn about React Hooks. It
-          is built as a pure React functional component.
-        </p>
-        <h2>Features</h2>
-        <ul className="feature-list">
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Extremely lightweight (less than 2KB gzipped including
-              styling).
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Loop typing animation.
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Add custom line breaks.
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Simulate backspace character key.
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Control typing and delete speeds.
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Use custom cursor character.
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Introduce artificial typing delays.
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Control start of typing animation.
-            </span>
-          </li>
-          <li>
-            <span role="img" aria-label="feature">
-              ✔️ Built for React &mdash; No external dependencies.
-            </span>
-          </li>
-        </ul>
-        <h2>Demo</h2>
+        <header className="App-header">
+          <ul className="menu">
+            <li>
+              <a href="#overview" className="nodeco">
+                <img className="logo" src="./logo.png" alt="logo" />
+              </a>
+            </li>
+            <li>
+              <a href="#features">Features</a>
+            </li>
+            <li>
+              <a href="#examples">Examples</a>
+            </li>
+            <li>
+              <a href="#installation">Installation</a>
+            </li>
+            <li>
+              <a href="#license">License</a>
+            </li>
+            <li>
+              <GitHubButton
+                href="https://github.com/oliverox/react-TypeMe"
+                data-icon="octicon-star"
+                data-size="large"
+                data-show-count="true"
+                aria-label="Star oliverox/react-TypeMe on GitHub"
+              >
+                Star
+              </GitHubButton>
+            </li>
+          </ul>
+        </header>
+        <section id="overview" className="section">
+          <h1>React-TypeMe</h1>
+          <p>
+            React-TypeMe is a typewriter animation simulator component built to
+            be simple and powerful. It was created primarily to learn about
+            React Hooks. It is built as a pure React functional component.
+          </p>
+        </section>
 
-        <div className="section-example">
-          <h4>A simple string</h4>
-          <TypeMe startAnimation={animExample === '1'} className="tm-example">
-            Simple string passed as children
-          </TypeMe>
-          <span className="play-button" onClick={() => handleClick('1')}>
-            run
-          </span>
-          <pre>
-            <code className="language-jsx">
-              {`import TypeMe from 'react-typeme';
+        <section id="features" className="section">
+          <h2>Features</h2>
+          <ul className="feature-list">
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Extremely lightweight (less than 2KB gzipped including
+                styling).
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Loop typing animation.
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Add custom line breaks.
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Simulate backspace character key.
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Control typing and delete speeds.
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Use custom cursor character.
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Introduce artificial typing delays.
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Control start of typing animation.
+              </span>
+            </li>
+            <li>
+              <span role="img" aria-label="feature">
+                ✔️ Built for React &mdash; No external dependencies.
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section id="examples" className="section">
+          <h2 id="examples">Examples</h2>
+          <div className="section-example">
+            <h4>A simple string</h4>
+            <TypeMe
+              typingSpeed={500}
+              startAnimation={animExample === '1'}
+              className="tm-example"
+            >
+              Simple string passed as children
+            </TypeMe>
+            <span className="play-button" onClick={() => handleClick('1')}>
+              run
+            </span>
+            <pre>
+              <code className="language-jsx">
+                {`import TypeMe from 'react-typeme';
 
 <TypeMe>Simple string passed as children</TypeMe>`}
-            </code>
-          </pre>
-        </div>
+              </code>
+            </pre>
+          </div>
 
-        <div className="section-example">
-          <h4>With a line break</h4>
-          <TypeMe
-            className="tm-example"
-            startAnimation={animExample === '2'}
-            strings={[
-              'These strings are passed',
-              <LineBreak />,
-              'as an array via the "strings" prop'
-            ]}
-          />
-          <span className="play-button" onClick={() => handleClick('2')}>
-            run
-          </span>
-          <pre>
-            <code className="language-jsx">
-              {`import TypeMe, { LineBreak } from 'react-typeme';
+          <div className="section-example">
+            <h4>With a line break</h4>
+            <TypeMe
+              className="tm-example"
+              typingSpeed={400}
+              startAnimation={animExample === '2'}
+              strings={[
+                'These strings are passed',
+                <LineBreak />,
+                'as an array via props'
+              ]}
+            />
+            <span className="play-button" onClick={() => handleClick('2')}>
+              run
+            </span>
+            <pre>
+              <code className="language-jsx">
+                {`import TypeMe, { LineBreak } from 'react-typeme';
 
 <TypeMe
   strings={[
     'These strings are passed',
     <LineBreak />,
-    'as an array via the "strings" prop'
+    'as an array via props'
   ]}
 />`}
-            </code>
-          </pre>
-        </div>
+              </code>
+            </pre>
+          </div>
 
-
-        <div className="section-example">
-          <h4>With backspace</h4>
-          <TypeMe
-            className="tm-example"
-            startAnimation={animExample === '3'}
-            strings={[
-              'Hello there. ',
-              'Can you please erase this sentence?',
-              <Delete characters={35} />,
-              'Thank you!'
-            ]}
-          />
-          <span className="play-button" onClick={() => handleClick('3')}>
-            run
-          </span>
-          <pre>
-            <code className="language-jsx">
-              {`import TypeMe, { Delete } from 'react-typeme';
+          <div className="section-example">
+            <h4>With backspace</h4>
+            <TypeMe
+              className="tm-example"
+              typingSpeed={500}
+              deleteSpeed={3000}
+              startAnimation={animExample === '3'}
+              strings={[
+                'Hello there. ',
+                'Can you please erase this sentence?',
+                <Delete characters={35} />,
+                'Thank you!'
+              ]}
+            />
+            <span className="play-button" onClick={() => handleClick('3')}>
+              run
+            </span>
+            <pre>
+              <code className="language-jsx">
+                {`import TypeMe, { Delete } from 'react-typeme';
 
 <TypeMe
   strings={[
@@ -152,9 +196,44 @@ const App = () => {
     'Thank you!'
   ]}
 />`}
-            </code>
-          </pre>
-        </div>        
+              </code>
+            </pre>
+          </div>
+
+          <div className="section-example">
+            <h4>With a custom delay</h4>
+            <TypeMe
+              className="tm-example"
+              typingSpeed={500}
+              startAnimation={animExample === '4'}
+              strings={[
+                'Hey, hold on a sec...',
+                <Delay ms={2000} />,
+                ' Thank you for trying my delay feature!'
+              ]}
+            />
+            <span className="play-button" onClick={() => handleClick('4')}>
+              run
+            </span>
+            <pre>
+              <code className="language-jsx">
+                {`import TypeMe, { Delay } from 'react-typeme';
+
+<TypeMe
+  strings={[
+    'Hey, hold on a sec...',
+    <Delay ms={2000} />,
+    ' Thank you for trying my delay feature!'
+  ]}
+/>`}
+              </code>
+            </pre>
+          </div>
+        </section>
+
+        <section id="installation" className="section">
+          <h2>Installation</h2>
+        </section>
       </div>
     </React.Fragment>
   );
