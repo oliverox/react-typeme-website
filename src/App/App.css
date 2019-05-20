@@ -8,33 +8,10 @@ html {
 }
 
 .App {
-  padding: 35px 10px 10px 10px;
+  padding: 25px 10px 10px 10px;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.App-header {
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-  position: fixed;
-}
-.logo {
-  width: 40px;
-}
-
-.menu {
-  display: flex;
-  list-style: none;
-  padding-top: 10px;
-  align-items: center;
-  background-color: white;
-  justify-content: space-evenly;
-}
-.menu li {
-  display: inline;
 }
 
 section {
@@ -108,25 +85,4 @@ section {
   background-color: white;
   color: #1ca086;
   cursor: pointer;
-}
-
-.foot {
-  background-color: #1ca086;
-  color: white;
-  position: absolute;
-  width: 100%;
-  left: 0;
-  height: 80px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.social {
-  padding: 10px;
-}
-
-.footer-text {
-  text-transform: uppercase;
-  font-size: small;
 }

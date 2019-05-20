@@ -1,0 +1,10 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 35px 10px 10px 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
