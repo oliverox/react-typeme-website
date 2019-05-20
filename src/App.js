@@ -236,45 +236,55 @@ const App = () => {
 
         <section id="installation" className="section">
           <h2>Installation</h2>
-            1. Install the npm package inside your project.
-            <pre style={{marginBottom: 60}}>
-              <code className="language-shell">$ npm install --save react-typeme</code>
-            </pre>
-            2. Import <strong>React-TypeMe</strong> into your bundle.
-            <pre>
-              <code className="language-jsx">
-                {`import React from 'react';
+          1. Install the npm package inside your project.
+          <pre style={{ marginBottom: 60 }}>
+            <code className="language-shell">
+              $ npm install --save react-typeme
+            </code>
+          </pre>
+          2. Import <strong>React-TypeMe</strong> into your bundle.
+          <pre>
+            <code className="language-jsx">
+              {`import React from 'react';
 import TypeMe from 'react-typeme';
 
 <TypeMe>Simple string passed as children</TypeMe>`}
-              </code>
-            </pre>
+            </code>
+          </pre>
         </section>
 
         <section id="license" className="section">
           <h2>License</h2>
           <p>
             Use <strong>React-TypeMe</strong> in personal or open source
-            projects <strong>100% free of charge</strong>. To use it in commercial projects,
-            thank you for purchasing a single or multi-project license right
-            here.
+            projects <strong>100% free of charge</strong>. To use it in
+            commercial projects, thank you for purchasing a single or
+            multi-project license right here.
           </p>
           <div className="license-cta">
             <p className="license-col">
-              <span className="license-title">Commercial<br />Single License</span>
+              <span className="license-title">
+                Commercial
+                <br />
+                Single License
+              </span>
               <span className="license-price">USD 15</span>
               <span className="license-desc">
-                Use <strong>React-TypeMe</strong> in a single commercial project. Includes
-                lifetime updates.
+                Use <strong>React-TypeMe</strong> in a single commercial
+                project. Includes lifetime updates.
               </span>
               <span className="license-button">Buy Single License</span>
             </p>
             <p className="license-col">
-              <span className="license-title">Commercial<br />Unlimited License</span>
+              <span className="license-title">
+                Commercial
+                <br />
+                Unlimited License
+              </span>
               <span className="license-price">USD 45</span>
               <span className="license-desc">
-                Use <strong>React-TypeMe</strong> in unlimited commercial projects. Includes
-                lifetime updates.
+                Use <strong>React-TypeMe</strong> in unlimited commercial
+                projects. Includes lifetime updates.
               </span>
               <span className="license-button">Buy Unlimited License</span>
             </p>
@@ -284,13 +294,31 @@ import TypeMe from 'react-typeme';
         <footer className="foot">
           <div>
             <span className="social">
-              <FaTwitter />
+              <a
+                className="nodeco"
+                href="https://twitter.com/oliveroxenham"
+                target="_blank"
+              >
+                <FaTwitter />
+              </a>
             </span>
             <span className="social">
-              <FaGithub />
+              <a
+                className="nodeco"
+                href="https://www.facebook.com/oliver.oxenham"
+                target="_blank"
+              >
+                <FaGithub />
+              </a>
             </span>
             <span className="social">
-              <FaLinkedin />
+              <a
+                className="nodeco"
+                href="https://www.linkedin.com/in/oliver-oxenham-a33696/"
+                target="_blank"
+              >
+                <FaLinkedin />
+              </a>
             </span>
           </div>
           <span className="footer-text">Created by Oliver Oxenham</span>
