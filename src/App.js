@@ -236,31 +236,44 @@ const App = () => {
 
         <section id="installation" className="section">
           <h2>Installation</h2>
+            1. Install the npm package inside your project.
+            <pre style={{marginBottom: 60}}>
+              <code className="language-shell">$ npm install --save react-typeme</code>
+            </pre>
+            2. Import <strong>React-TypeMe</strong> into your bundle.
+            <pre>
+              <code className="language-jsx">
+                {`import React from 'react';
+import TypeMe from 'react-typeme';
+
+<TypeMe>Simple string passed as children</TypeMe>`}
+              </code>
+            </pre>
         </section>
 
         <section id="license" className="section">
           <h2>License</h2>
           <p>
             Use <strong>React-TypeMe</strong> in personal or open source
-            projects 100% free of charge. To use it in commercial projects,
+            projects <strong>100% free of charge</strong>. To use it in commercial projects,
             thank you for purchasing a single or multi-project license right
             here.
           </p>
           <div className="license-cta">
             <p className="license-col">
+              <span className="license-title">Commercial<br />Single License</span>
               <span className="license-price">USD 15</span>
-              <span>Commercial Single License</span>
               <span className="license-desc">
-                Use React-TypeMe in a single commercial project. Includes
+                Use <strong>React-TypeMe</strong> in a single commercial project. Includes
                 lifetime updates.
               </span>
               <span className="license-button">Buy Single License</span>
             </p>
             <p className="license-col">
+              <span className="license-title">Commercial<br />Unlimited License</span>
               <span className="license-price">USD 45</span>
-              <span>Commercial Unlimited License</span>
               <span className="license-desc">
-                Use React-TypeMe in unlimited commercial projects. Includes
+                Use <strong>React-TypeMe</strong> in unlimited commercial projects. Includes
                 lifetime updates.
               </span>
               <span className="license-button">Buy Unlimited License</span>

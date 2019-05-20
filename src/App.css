@@ -79,13 +79,18 @@ section {
 }
 .license-col {
   display: flex;
-  height: 200px;
+  height: 300px;
   align-items: center;
   flex-direction: column;
   justify-content: space-evenly;
 }
+.license-title {
+  text-align: center;
+  font-size: 24px;
+}
 .license-price {
   font-weight: bold;
+  font-size: 30px;
 }
 .license-desc {
   text-align: center;
@@ -93,7 +98,7 @@ section {
 }
 .license-button {
   color: white;
-  padding: 5px 10px;
+  padding: 10px 15px;
   border-radius: 5px;
   border: 2px solid #1ca086;
   background-color: #1ca086;
