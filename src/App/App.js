@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import TypeMe, { LineBreak, Delete, Delay } from 'react-typeme';
 
 import './App.css';
@@ -225,7 +226,7 @@ import TypeMe from 'react-typeme';
               Use <strong>React-TypeMe</strong> in a single commercial project.
               Includes lifetime updates.
             </span>
-            <span className="license-button">Buy Single License</span>
+            <Link to="/checkout" className="license-button">Buy Single License</Link>
           </p>
           <p className="license-col">
             <span className="license-title">
@@ -238,7 +239,7 @@ import TypeMe from 'react-typeme';
               Use <strong>React-TypeMe</strong> in unlimited commercial
               projects. Includes lifetime updates.
             </span>
-            <span className="license-button">Buy Unlimited License</span>
+            <Link to="/checkout" className="license-button">Buy Unlimited License</Link>
           </p>
         </div>
       </section>

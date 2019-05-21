@@ -1,9 +1,10 @@
 .foot {
   background-color: #1ca086;
   color: white;
-  position: absolute;
+  position: fixed;
   width: 100%;
   left: 0;
+  bottom: 0;
   height: 80px;
   display: flex;
   flex-direction: column;
