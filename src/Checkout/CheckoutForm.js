@@ -52,24 +52,34 @@ class CheckoutForm extends Component {
     return (
       <div className="form-container">
         <form onSubmit={this.handleSubmit}>
-          <h3 style={{ marginTop: 20 }}>
-            Purchasing React-TypeMe Single License
+          <h3 style={{ marginTop: 20, textAlign: 'center' }}>
+            React-TypeMe
+            <br />
+            Commercial Single License
           </h3>
-          <input
-            name="name"
-            type="text"
-            placeholder="Full name"
-            required
-          />
+          <input name="name" type="text" placeholder="Full name" required />
+          <hr />
           <input
             name="email"
             type="email"
             placeholder="Email address"
             required
           />
-          <div style={{ paddingTop: 20 }}>
-            <CardElement style={{ base: { fontSize: '18px' } }} />
+          <hr />
+          <div style={{ paddingTop: 10, paddingLeft: 10, marginBottom: 15 }}>
+            <CardElement
+              style={{
+                base: {
+                  color: '#1ca086',
+                  fontSize: '18px',
+                  '::placeholder': {
+                    color: '#bfbfbf'
+                  }
+                }
+              }}
+            />
           </div>
+          <hr />
           <button className="buy-cta" onClick={this.handleSubmit}>
             Pay US$15
           </button>

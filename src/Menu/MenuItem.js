@@ -23,7 +23,8 @@ class MenuItem extends React.Component {
         padding: '1rem 0',
         margin: '0 5%',
         cursor: 'pointer',
-        color: this.state.hover ? 'gray' : 'black',
+        color: this.state.hover ? 'black' : '#555',
+        backgroundColor: this.state.hover? '#e4e4e4' : 'white',
         transition: 'color 0.2s ease-in-out',
         animation: '0.5s slideIn forwards',
         animationDelay: this.props.delay
@@ -31,7 +32,7 @@ class MenuItem extends React.Component {
       line: {
         width: '90%',
         height: '1px',
-        background: 'gray',
+        background: 'lightgrey',
         margin: '0 auto',
         animation: '0.5s shrink forwards',
         animationDelay: this.props.delay

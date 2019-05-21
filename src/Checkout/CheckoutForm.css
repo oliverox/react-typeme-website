@@ -28,7 +28,28 @@
   border: 0;
   outline: 0;
   height: 50px;
-  border-bottom: 1px solid #e8e8e8;
+  color: #1ca086;
+}
+
+.form-container input::-webkit-input-placeholder {
+  color: #8a8a8a;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.form-container input:-moz-placeholder {
+  color: #8a8a8a;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.form-container input::-moz-placeholder {
+  color: #8a8a8a;
+  font-size: 18px;
+  font-family: sans-serif;
+}
+.form-container input:-ms-input-placeholder {
+  color: #8a8a8a;
+  font-size: 18px;
+  font-family: sans-serif;
 }
 
 
