@@ -69,3 +69,11 @@
   color: #1ca086;
   background-color: white;
 }
+
+.powered {
+  text-align: center;
+}
+
+.powered img {
+  margin-bottom: -15px;
+}

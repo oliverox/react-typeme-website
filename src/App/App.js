@@ -226,7 +226,7 @@ import TypeMe from 'react-typeme';
               Use <strong>React-TypeMe</strong> in a single commercial project.
               Includes lifetime updates.
             </span>
-            <Link to="/checkout" className="license-button">Buy Single License</Link>
+            <Link to="/checkout?lic=single" className="license-button">Buy Single License</Link>
           </p>
           <p className="license-col">
             <span className="license-title">
@@ -239,7 +239,7 @@ import TypeMe from 'react-typeme';
               Use <strong>React-TypeMe</strong> in unlimited commercial
               projects. Includes lifetime updates.
             </span>
-            <Link to="/checkout" className="license-button">Buy Unlimited License</Link>
+            <Link to="/checkout?lic=unlimited" className="license-button">Buy Unlimited License</Link>
           </p>
         </div>
       </section>

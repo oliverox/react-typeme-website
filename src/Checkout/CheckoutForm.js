@@ -48,6 +48,18 @@ class CheckoutForm extends Component {
   }
 
   render() {
+    let qs = window.location.search || '?lic=single';
+    let split = qs.split('=');
+    let license = 'single';
+    let price = '15';
+    let lic;
+    if (split.length > 1) {
+      lic = split[1];
+    }
+    if (lic === 'unlimited') {
+      license = lic;
+      price = '45';
+    }
     window.scrollTo({ top: 0 });
     return (
       <div className="form-container">
@@ -55,7 +67,7 @@ class CheckoutForm extends Component {
           <h3 style={{ marginTop: 20, textAlign: 'center' }}>
             React-TypeMe
             <br />
-            Commercial Single License
+            Commercial {`${license.charAt(0).toUpperCase()}${license.slice(1)}`} License
           </h3>
           <input name="name" type="text" placeholder="Full name" required />
           <hr />
@@ -80,8 +92,9 @@ class CheckoutForm extends Component {
             />
           </div>
           <hr />
+          <span className="powered"><img src="./powered_by_stripe.png" alt="powered by Stripe" /></span>
           <button className="buy-cta" onClick={this.handleSubmit}>
-            Pay US$15
+            Pay US${`${price}`}
           </button>
         </form>
       </div>
