@@ -54,6 +54,7 @@
 
 
 .buy-cta {
+  outline: none;
   border: 2px solid #1ca086;
   padding: 10px;
   color: white;
@@ -68,6 +69,13 @@
   cursor: pointer;
   color: #1ca086;
   background-color: white;
+}
+
+.buy-cta:disabled {
+  background: #ddd;
+  cursor: not-allowed;
+  color: #b3b3b3 !important;
+  border: 2px solid #ddd;
 }
 
 .powered {

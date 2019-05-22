@@ -18,7 +18,7 @@ const Success = () => (
         textAlign: 'center'
       }}
     >
-      You will receive a confirmation email that you are now licensed to use
+      You will soon receive a confirmation email that you are now licensed to use
       React-TypeMe in a commercial project.
     </p>
   </div>
