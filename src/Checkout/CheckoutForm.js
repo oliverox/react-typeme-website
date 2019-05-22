@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Redirect } from 'react-router';
+import uuid from 'uuid/v4';
 import { CardElement, injectStripe } from 'react-stripe-elements';
 
 import './CheckoutForm.css';
@@ -6,74 +8,104 @@ import './CheckoutForm.css';
 class CheckoutForm extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      name: '',
+      email: '',
+      redirect: '',
+      disabled: false
+    };
+    this.handleUpdate = this.handleUpdate.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  async handleSubmit(ev) {
-    // We don't want to let default form submission happen here, which would refresh the page.
+  handleUpdate(ev) {
     ev.preventDefault();
+    this.setState({
+      [ev.target.name]: ev.target.value
+    });
+  }
 
-    // Within the context of `Elements`, this call to createPaymentMethod knows from which Element to
-    // create the PaymentMethod, since there's only one in this group.
-    // See our createPaymentMethod documentation for more:
-    // https://stripe.com/docs/stripe-js/reference#stripe-create-payment-method
-    this.props.stripe
-      .createPaymentMethod('card', { billing_details: { name: 'Jenny Rosen' } })
-      .then(({ paymentMethod }) => {
-        console.log('Received Stripe PaymentMethod:', paymentMethod);
+  async handleSubmit(ev) {
+    ev.preventDefault();
+    let license = ev.target.getAttribute('data-lic');
+    let { token } = await this.props.stripe.createToken({
+      name: this.state.name,
+      email: this.state.email
+    });
+    let response = await fetch('/.netlify/functions/charge', {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify({
+        token,
+        license,
+        idempotency_key: uuid()
+      })
+    });
+
+    if (response.ok) {
+      console.log('Purchase Complete!');
+      this.setState({
+        redirect: 'success'
       });
+    } else {
+      console.error('Purchase Error encountered!');
+      this.setState({
+        redirect: 'error'
+      });
+    }
+  }
 
-    // You can also use handleCardPayment with the Payment Intents API automatic confirmation flow.
-    // See our handleCardPayment documentation for more:
-    // https://stripe.com/docs/stripe-js/reference#stripe-handle-card-payment
-    // this.props.stripe.handleCardPayment('{PAYMENT_INTENT_CLIENT_SECRET}', data);
-
-    // You can also use createToken to create tokens.
-    // See our tokens documentation for more:
-    // https://stripe.com/docs/stripe-js/reference#stripe-create-token
-    // this.props.stripe.createToken({ type: 'card', name: 'Jenny Rosen' });
-    // token type can optionally be inferred if there is only one one Element
-    // with which to create tokens
-    // this.props.stripe.createToken({name: 'Jenny Rosen'});
-
-    // You can also use createSource to create Sources.
-    // See our Sources documentation for more:
-    // https://stripe.com/docs/stripe-js/reference#stripe-create-source
-    // this.props.stripe.createSource({
-    //   type: 'card',
-    //   owner: {
-    //     name: 'Jenny Rosen'
-    //   }
-    // });
+  shouldComponentUpdate(nextProps, nextState) {
+    if (nextState.disabled !== this.state.disabled) {
+      return true;
+    } else if (nextState.redirect !== this.state.redirect) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   render() {
-    let qs = window.location.search || '?lic=single';
+    let qs = window.location.search || '?lic=1';
     let split = qs.split('=');
     let license = 'single';
-    let price = '15';
-    let lic;
-    if (split.length > 1) {
-      lic = split[1];
+    let fullPrice = process.env.REACT_APP_SINGLE_LICENSE_PRICE;
+    if (split.length > 1 && split[1] === '2') {
+      license = 'unlimited';
+      fullPrice = process.env.REACT_APP_UNLIMITED_LICENSE_PRICE;
     }
-    if (lic === 'unlimited') {
-      license = lic;
-      price = '45';
-    }
+    let price = `${fullPrice.slice(0, 2)}.${fullPrice.slice(2)}`;
     window.scrollTo({ top: 0 });
     return (
       <div className="form-container">
+        {this.state.redirect === 'success' && <Redirect to="/success" />}
+        {this.state.redirect === 'error' && <Redirect to="/error" />}
         <form onSubmit={this.handleSubmit}>
           <h3 style={{ marginTop: 20, textAlign: 'center' }}>
             React-TypeMe
             <br />
-            Commercial {`${license.charAt(0).toUpperCase()}${license.slice(1)}`} License
+            Commercial {`${license.charAt(0).toUpperCase()}${license.slice(
+              1
+            )}`}{' '}
+            License
           </h3>
-          <input name="name" type="text" placeholder="Full name" required />
+          <input
+            style={{ textTransform: 'capitalize' }}
+            name="name"
+            type="text"
+            autoCorrect="off"
+            spellCheck="off"
+            placeholder="Full name"
+            onChange={this.handleUpdate}
+            required
+          />
           <hr />
           <input
             name="email"
             type="email"
+            autoCorrect="off"
+            spellCheck="off"
+            onChange={this.handleUpdate}
             placeholder="Email address"
             required
           />
@@ -92,8 +124,20 @@ class CheckoutForm extends Component {
             />
           </div>
           <hr />
-          <span className="powered"><img src="./powered_by_stripe.png" alt="powered by Stripe" /></span>
-          <button className="buy-cta" onClick={this.handleSubmit}>
+          <span className="powered">
+            <img src="./powered_by_stripe.png" alt="powered by Stripe" />
+          </span>
+          <button
+            disabled={this.state.disabled}
+            className="buy-cta"
+            data-lic={license}
+            onClick={ev => {
+              this.setState({
+                disabled: true
+              });
+              this.handleSubmit(ev);
+            }}
+          >
             Pay US${`${price}`}
           </button>
         </form>

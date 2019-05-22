@@ -8,6 +8,7 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx.min';
 
 import App from './App/App';
+import Error from './Error/Error';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
 import Success from './Success/Success';
@@ -34,7 +35,8 @@ const WebApp = () => {
         <div className="main-content">
           <Route path="/" exact component={App} />
           <Route path="/checkout" exact component={Checkout} />
-          <Route path="/success/" exact component={Success} />
+          <Route path="/success" exact component={Success} />
+          <Route path="/error" exact component={Error} />
         </div>
         <Footer />
       </React.Fragment>
