@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import GitHubButton from 'react-github-btn';
 
 import './Header.css';
@@ -24,7 +25,7 @@ const Header = () => (
         <a href="/#license">License</a>
       </li>
       <li>
-        <a href="/api">Docs</a>
+        <Link to="/api">Docs</Link>
       </li>
       <li>
         <GitHubButton
