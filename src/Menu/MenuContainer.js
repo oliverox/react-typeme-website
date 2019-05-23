@@ -21,6 +21,7 @@ const MenuContainer = () => {
     'Usage Examples',
     'Installation',
     'License',
+    'Docs',
     <GitHubButton
       href="https://github.com/oliverox/react-TypeMe"
       data-icon="octicon-star"
@@ -50,8 +51,11 @@ const MenuContainer = () => {
             case 'license':
               window.location.href = '/#license';
               break;
-            default:
+            case 'docs':
+              window.location.href = '/api';
               break;
+            default:
+            break;
           }
           handleLinkClick();
         }}

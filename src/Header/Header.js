@@ -7,7 +7,7 @@ const Header = () => (
   <header className="header">
     <ul className="menu">
       <li>
-        <a href="#overview" className="nodeco">
+        <a href="/#overview" className="nodeco">
           <img className="logo" src="./logo.png" alt="logo" />
         </a>
       </li>
@@ -22,6 +22,9 @@ const Header = () => (
       </li>
       <li>
         <a href="/#license">License</a>
+      </li>
+      <li>
+        <a href="/api">Docs</a>
       </li>
       <li>
         <GitHubButton
