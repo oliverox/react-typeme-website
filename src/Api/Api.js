@@ -1,8 +1,10 @@
 import React from 'react';
+import Prism from 'prismjs';
 
 import './Api.css';
 
 const Api = () => {
+  Prism.highlightAll();
   return (
     <div className="App">
       <section style={{ paddingBottom: 100 }}>
