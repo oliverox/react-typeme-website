@@ -8,6 +8,7 @@ import Prism from 'prismjs';
 import 'prismjs/components/prism-jsx.min';
 
 import App from './App/App';
+import Api from './Api/Api';
 import Error from './Error/Error';
 import Header from './Header/Header';
 import Footer from './Footer/Footer';
@@ -34,6 +35,7 @@ const WebApp = () => {
         </Media>
         <div className="main-content">
           <Route path="/" exact component={App} />
+          <Route path="/api" exact component={Api} />
           <Route path="/checkout" exact component={Checkout} />
           <Route path="/success" exact component={Success} />
           <Route path="/error" exact component={Error} />
