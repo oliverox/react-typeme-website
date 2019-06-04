@@ -48,6 +48,13 @@ exports.handler = (event, context, callback) => {
     (err, charge) => {
       if (err !== null) {
         console.log(err);
+        callback(null, {
+          statusCode: 400,
+          headers,
+          body: JSON.stringify({
+            status: 'failed-charge'
+          })
+        });
       }
 
       let status =

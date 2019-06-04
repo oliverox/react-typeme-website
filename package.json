@@ -14,7 +14,7 @@
     "react-stripe-elements": "^3.0.0",
     "react-typeme": "^1.0.0",
     "react-typography": "^0.16.19",
-    "stripe": "^7.0.0",
+    "stripe": "^7.1.0",
     "typography": "^0.16.19",
     "typography-theme-fairy-gates": "^0.16.19",
     "uuid": "^3.3.2"

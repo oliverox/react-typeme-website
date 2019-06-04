@@ -4,7 +4,7 @@ import { StripeProvider, Elements } from 'react-stripe-elements';
 
 const Checkout = () => {
   return (
-    <StripeProvider apiKey="pk_test_IpbBMxVHMOVDx6dooIbcBAZ200qevJ0q3Y">
+    <StripeProvider apiKey={`${process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY}`}>
       <Elements>
         <CheckoutForm />
       </Elements>
