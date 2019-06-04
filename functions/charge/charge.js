@@ -1,4 +1,8 @@
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
+const stripe = require('stripe')(
+  process.env.NODE_ENV === 'production'
+    ? process.env.REACT_APP_STRIPE_SECRET_KEY
+    : process.env.REACT_APP_DEV_STRIPE_SECRET_KEY
+);
 const statusCode = 200;
 const headers = {
   'Access-Control-Allow-Origin': '*',
