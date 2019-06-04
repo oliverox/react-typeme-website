@@ -12,7 +12,8 @@ exports.handler = (event, context, callback) => {
       body: {}
     });
   }
-
+  console.log('STRIPE SECRET=', process.env.STRIPE_SECRET_KEY);
+  console.log('STRIPE KEY=', process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY);
   const data = JSON.parse(event.body);
 
   //-- Make sure we have all required data. Otherwise, escape.
