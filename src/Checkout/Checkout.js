@@ -3,6 +3,7 @@ import CheckoutForm from './CheckoutForm';
 import { StripeProvider, Elements } from 'react-stripe-elements';
 
 const Checkout = () => {
+  console.log('context=', process.env, process.env.CONTEXT);
   const STRIPE_PUBLISHABLE_KEY =
     process.env.NODE_ENV === 'production'
       ? process.env.REACT_APP_STRIPE_PUBLISHABLE_KEY

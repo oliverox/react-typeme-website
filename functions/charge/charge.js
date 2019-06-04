@@ -1,7 +1,7 @@
 const stripe = require('stripe')(
-  process.env.NODE_ENV === 'production'
-    ? process.env.REACT_APP_STRIPE_SECRET_KEY
-    : process.env.REACT_APP_DEV_STRIPE_SECRET_KEY
+  process.env.CONTEXT === 'production'
+    ? process.env.STRIPE_SECRET_KEY
+    : process.env.DEV_STRIPE_SECRET_KEY
 );
 const statusCode = 200;
 const headers = {
@@ -9,6 +9,9 @@ const headers = {
   'Access-Control-Allow-Headers': 'Content-Type'
 };
 exports.handler = (event, context, callback) => {
+  console.log(`env is ${process.env.CONTEXT}`);
+  console.log('secret prod=', process.env.STRIPE_SECRET_KEY);
+  console.log('secret dev =', process.env.DEV_STRIPE_SECRET_KEY);
   if (event.httpMethod !== 'POST' || !event.body) {
     callback(null, {
       statusCode,
