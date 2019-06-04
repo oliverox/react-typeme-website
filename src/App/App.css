@@ -24,14 +24,15 @@ section {
 }
 
 .play-button {
-  top: 32px;
+  top: 61px;
+  font-weight: bold;
   position: relative;
   align-self: flex-end;
-  margin-right: 2px;
+  padding: 8px 10px;
+  margin-right: 25px;
   font-size: 14px;
   color: black;
   border-radius: 5px;
-  padding: 0px 6px;
   cursor: pointer;
   text-transform: uppercase;
   background-color: greenyellow;
