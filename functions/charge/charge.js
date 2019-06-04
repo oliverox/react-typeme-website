@@ -5,7 +5,6 @@ const headers = {
   'Access-Control-Allow-Headers': 'Content-Type'
 };
 exports.handler = (event, context, callback) => {
-  console.log(`secret is ${process.env.REACT_APP_STRIPE_SECRET_KEY}`);
   if (event.httpMethod !== 'POST' || !event.body) {
     callback(null, {
       statusCode,
