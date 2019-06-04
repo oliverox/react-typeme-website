@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Prism from 'prismjs';
 import TypeMe, { LineBreak, Delete, Delay } from 'react-typeme';
 
 import './App.css';
@@ -7,6 +8,9 @@ import './App.css';
 const App = () => {
   const [animExample, setAnimExample] = useState('');
   const handleClick = example => setAnimExample(example);
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
   return (
     <div className="App">
       <section id="overview" className="section">
