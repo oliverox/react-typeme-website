@@ -14,9 +14,9 @@ const Api = () => {
         <h2>TypeMe</h2>
         <p>
           <code>&lt;TypeMe/&gt;</code> renders a string enclosed within a{' '}
-          <code>&lt;span/&gt;</code> element. Below is a list props read by{' '}
-          <code>&lt;TypeMe/&gt;</code>.
+          <code>&lt;span/&gt;</code> element.
         </p>
+        <h3>Props API</h3>
         <table className="docs-table">
           <thead>
             <tr>
