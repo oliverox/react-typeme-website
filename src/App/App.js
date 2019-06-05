@@ -18,7 +18,7 @@ const App = () => {
         <p>
           React-TypeMe is a typewriter animation simulator component built to be
           simple and powerful. It was created primarily to learn more about
-          React Hooks feature. It is built as a pure React functional component.
+          React Hooks. It is built as a pure React functional component.
         </p>
       </section>
 
@@ -230,7 +230,9 @@ import TypeMe from 'react-typeme';
               Use <strong>React-TypeMe</strong> in a single commercial project.
               Includes lifetime updates.
             </span>
-            <Link to="/checkout?lic=1" className="license-button">Buy Single License</Link>
+            <Link to="/checkout?lic=1" className="license-button">
+              Buy Single License
+            </Link>
           </p>
           <p className="license-col">
             <span className="license-title">
@@ -243,7 +245,9 @@ import TypeMe from 'react-typeme';
               Use <strong>React-TypeMe</strong> in unlimited commercial
               projects. Includes lifetime updates.
             </span>
-            <Link to="/checkout?lic=2" className="license-button">Buy Unlimited License</Link>
+            <Link to="/checkout?lic=2" className="license-button">
+              Buy Unlimited License
+            </Link>
           </p>
         </div>
       </section>
