@@ -17,8 +17,8 @@ const App = () => {
         <h1>React-TypeMe</h1>
         <p>
           React-TypeMe is a typewriter animation simulator component built to be
-          simple and powerful. It was created primarily to learn more about
-          React Hooks. It is built as a pure React functional component.
+          simple and powerful. It is built as a pure React functional component
+          using React Hooks.
         </p>
       </section>
 
